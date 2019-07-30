@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Pinging node
+    ping:
+
+  - name: Installing Tree
+    apt: 
+      name: Tree
+      state: present
+      
