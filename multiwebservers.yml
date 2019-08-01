@@ -20,5 +20,5 @@
   - name: Start Webserver on Ubuntu16
     service:
       name: apache2
-      started: started
+      state: started
       
