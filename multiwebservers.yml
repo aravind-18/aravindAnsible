@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install Webserver on Redhat
+    yum:
+     name: httpd
+     state: present
+  
+  - name: Start the Webserver on Redhat
+    service:
+     name: httpd
+     state: started
+
+  - name: Install Webserver on Ubuntu16
+    apt:
+     name: apache2
+     state: present
+
+  - name: Start Webserver on Ubuntu16
+    service:
+      name: apache2
+      started: started
+      
