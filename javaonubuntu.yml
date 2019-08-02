@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install Java on Ubuntu16
+    apt_repository:
+     repo: ppa:openjdk-r/ppa
+     state: present
+    when: ansible_os_family == "Debian"
+
+  - name: Update Java on Ubuntu16
+    apt:
+     update_cache: yes
+    when: ansible_os_family == "Debian"
+
+  - name: Install Java on Ubuntu16
+    apt:
+     name: java-1.7.0-openjdk
+     state: present
+    when: ansible_os_family == "Debian"
+     
