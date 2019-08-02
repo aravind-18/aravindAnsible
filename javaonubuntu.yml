@@ -2,7 +2,7 @@
 - hosts: all
   become: yes
   tasks:
-  - name: Install Java on Ubuntu16
+  - name: Add repository on Java on Ubuntu16
     apt_repository:
      repo: ppa:openjdk-r/ppa
      state: present
