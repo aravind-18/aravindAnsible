@@ -1,0 +1,11 @@
+---
+- hosts: webserver
+  become: yes
+  vars:
+    var1: 'Hello... Templates !!!!'
+    var2: 'My first playbook using templates'
+  tasks:
+  - name: Basic Template Example
+    template:
+      src: ex1.j2
+      dest: /home/aravind/output.txt
