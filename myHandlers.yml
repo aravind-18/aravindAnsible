@@ -1,0 +1,21 @@
+---
+- hosts: webserver
+  become: yes
+  tasks:
+  - name: Install webserver on Ubuntu16
+    apt:
+      name: apache2
+      state: present
+    notify: restartwebserver
+
+  - name: Copy file to node
+    template:
+      src: ex1.j2
+      dest: /home/aravind/output1.txt
+      
+# Handler declaration
+  handlers:
+  - name: restartwebserver
+    service:
+      name: apache2
+      state: restarted
