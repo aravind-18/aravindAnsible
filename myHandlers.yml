@@ -12,7 +12,8 @@
     template:
       src: ex1.j2
       dest: /home/aravind/output1.txt
-      
+    notify: restartwebserver
+    
 # Handler declaration
   handlers:
   - name: restartwebserver
