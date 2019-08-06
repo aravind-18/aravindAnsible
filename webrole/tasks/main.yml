@@ -6,8 +6,8 @@
     state: present
   notify: restartwebserver
 
-- name: Start the Webserver on Redhat
-  service:
+- name: Install Webserver on Redhat
+  yum:
     name: httpd
-    state: started
+    state: present
   notify: restarthttpd
