@@ -1,0 +1,6 @@
+# Main file for running a role.
+---
+- hosts: webserver
+  become: yes
+  role:
+    - webrole

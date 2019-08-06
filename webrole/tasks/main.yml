@@ -1,2 +1,13 @@
 ---
 # tasks file for webrole
+- name: Install werserver on Ubuntu16
+  apt: 
+    name: apache2
+    state: present
+  notify: restartwebserver
+
+- name: Start the Webserver on Redhat
+  service:
+    name: httpd
+    state: started
+  notify: restarthttpd
