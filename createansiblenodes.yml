@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: Create Ansible Nodes
+    ec2:
+      key_name: sriluawskey
+      instance_type: t2.micro
+      image: ami-00aa96edc56b79d70
+      wait: yes
+      region: us-east-2
+      group: launch-wizard-3
+      count: 2
+      vpc_subnet_id: subnet-39692943
+      assign_public_ip: yes
+      instance_tags:
+        name: AnsibleNodes
