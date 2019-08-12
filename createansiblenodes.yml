@@ -4,6 +4,8 @@
   tasks:
   - name: Create Ansible Nodes
     ec2:
+      aws_access_key: AKIAWTPYBXESAYELST4H
+      aws_secret_access_key: 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
       key_name: sriluawskey
       instance_type: t2.micro
       image: ami-00aa96edc56b79d70
